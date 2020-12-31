@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Accordion shortcode start styles
+   ========================================================================== */
+.mkd-accordion-holder {
+	position: relative;
+
+	.mkd-accordion-content {
+		margin: 0;
+		padding: 0 30px 40px 9px;
+
+		&.ui-accordion-content-active {
+			border-bottom: 1px solid #f2f2f2;
+		}
+
+		p {
+			line-height: 28px;
+			margin: 30px 0 0 0;
+			color: #999;
+		}
+
+		&.mkd-accordion-dark.ui-accordion-content-active {
+			border-bottom: 1px solid #f2f2f2;
+		}
+
+	}
+
+	.mkd-title-holder {
+		cursor: pointer;
+		position: relative;
+		margin: 0;
+		line-height: 20px;
+		padding: 17px 0 22px 0;
+		font-size: 18px;
+		border-bottom: 1px solid #f2f2f2;
+		color: #fff;
+		font-weight: 600;
+		text-transform: uppercase;
+	;
+
+		@include mkdBoxSizing(border-box);
+		@include mkdTransform(translateZ(0px));
+		@include mkdTransition(background-color 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out);
+
+		&:first-child {
+			margin: 0;
+		}
+
+		.mkd-tab-title,
+		.mkd-tab-title-inner {
+			color: inherit;
+			line-height: inherit;
+		}
+
+		span.mkd-accordion-number {
+			color: $first-main-color;
+			font-size: 26px;
+			font-weight: 400;
+			margin-right: 15px;
+		}
+
+		.mkd-accordion-mark {
+			position: absolute;
+			top: 50%;
+			right: 8px;
+			display: block;
+			line-height: 1em;
+			color: #999;
+
+			@include mkdTransform(translateY(-50%));
+			@include mkdBoxSizing(border-box);
+			@include mkdTransition(background-color 0.15s ease-out);
+		}
+
+		.mkd-accordion-mark-icon {
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 100%;
+			line-height: 27px;
+			text-align: center;
+			font-size: 27px;
+		}
+
+		.mkd-accordion-mark-icon span {
+			position: absolute;
+			display: block;
+			line-height: inherit;
+			right: 6px;
+			top: -6px;
+
+			@include mkdTransition(opacity 0.15s ease-out);
+		}
+
+		.mkd-accordion-mark-icon .mkd-carousel-arrow-up {
+			opacity: 0;
+		}
+
+		.mkd-accordion-mark-icon .mkd-carousel-arrow-down {
+			opacity: 1;
+		}
+
+		&.mkd-accordion-dark {
+			color: #777;
+			border-bottom: 1px solid #ebebeb;
+
+			.mkd-accordion-mark {
+				color: #999;
+			}
+		}
+	}
+
+	.mkd-title-holder.ui-state-active {
+		color: $first-main-color;
+
+		.mkd-accordion-mark-icon {
+			color: $first-main-color;
+		}
+
+		.mkd-accordion-mark-icon .mkd-carousel-arrow-up {
+			opacity: 1;
+		}
+
+		.mkd-accordion-mark-icon .mkd-carousel-arrow-down {
+			opacity: 0;
+		}
+	}
+}
+
+.mkd-accordion-holder.mkd-initial {
+
+	.mkd-title-holder .mkd-tab-title {
+		text-align: left;
+
+		@include mkdTableLayout;
+		@include mkdBoxSizing(border-box);
+
+		span.mkd-icon-accordion-holder {
+			font-size: 18px;
+			margin-right: 17px;
+			margin-left: 14px;
+		}
+
+		span.mkd-tab-title-inner {
+			position: relative;
+			@include mkdTableCellLayout;
+			text-align: left;
+			letter-spacing: 1.5px;
+			font-family: $headings-font-family;
+		}
+
+	}
+
+}
+
+.mkd-accordion-holder.mkd-boxed {
+
+	border: 1px solid #363636;
+
+	.mkd-title-holder {
+		border-bottom: 0;
+		text-align: left;
+		padding: 24px 50px 24px 33px;
+		background-color: #1a1a1a;
+		border: 1px solid #f2f2f2;
+		border-top: 0 !important;
+
+		@include mkdTransition(background-color 0.15s ease-out, border-color 0.15s ease-out);
+
+		span.mkd-icon-accordion-holder {
+			margin-right: 6px;
+			font-size: 18px;
+		}
+
+		.mkd-accordion-mark {
+			border: 0;
+			background-color: transparent;
+
+			@include mkdTransition(color 0.15s ease-out);
+		}
+	}
+
+
+	.mkd-title-holder.ui-state-active,
+	.mkd-title-holder.ui-state-hover {
+		color: #fff;
+		background-color: #1f1f22;
+		border-color: #363636;
+
+		.mkd-accordion-mark {
+			color: #fff;
+		}
+	}
+}

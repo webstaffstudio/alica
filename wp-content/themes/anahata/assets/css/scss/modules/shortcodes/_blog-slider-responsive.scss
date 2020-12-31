@@ -1,0 +1,16 @@
+@media only screen and (max-width: map-get($breakpoints, large-laptop)) {
+	.mkd-blog-slider-holder .mkd-post-content .mkd-categories-date {
+
+		.mkd-categories-list {
+			margin-bottom: 10px;
+		}
+
+		.mkd-share-icons {
+			float: left;
+		}
+
+		.mkd-social-share-holder.mkd-list li:first-child a {
+			padding-left: 0;
+		}
+	}
+}

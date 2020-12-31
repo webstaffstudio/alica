@@ -1,0 +1,12 @@
+2020-12-26T11:57:12+00:00 CRITICAL syntax error, unexpected '$handle' (T_VARIABLE), expecting ',' or ')' в D:\OSPanel\domains\alica\wp-content\themes\anahata-child\functions.php на строке 10
+
+2020-12-26T11:57:18+00:00 CRITICAL syntax error, unexpected '$handle' (T_VARIABLE), expecting ',' or ')' в D:\OSPanel\domains\alica\wp-content\themes\anahata-child\functions.php на строке 10
+
+2020-12-26T13:58:14+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) в D:\OSPanel\domains\alica\wp-content\themes\anahata-child\functions.php на строке 64
+
+2020-12-26T14:15:43+00:00 CRITICAL syntax error, unexpected end of file в D:\OSPanel\domains\alica\wp-content\themes\anahata-child\single-courses.php на строке 28
+
+2020-12-26T14:32:49+00:00 CRITICAL syntax error, unexpected end of file в D:\OSPanel\domains\alica\wp-content\themes\anahata-child\single-courses.php на строке 28
+
+2020-12-26T14:44:26+00:00 CRITICAL syntax error, unexpected end of file в D:\OSPanel\domains\alica\wp-content\themes\anahata-child\single-courses.php на строке 28
+

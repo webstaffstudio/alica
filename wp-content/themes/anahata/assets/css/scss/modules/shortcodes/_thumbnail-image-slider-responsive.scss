@@ -1,0 +1,20 @@
+@include phone-landscape {
+	.mkd-thumbnail-image-slider {
+		.flex-control-nav.flex-control-thumbs {
+			li {
+				margin-bottom: 8px;
+			}
+		}
+	}
+}
+
+@include phone-portrait {
+
+	.mkd-thumbnail-image-slider {
+		.flex-control-nav.flex-control-thumbs {
+			li {
+				margin-bottom: 5px;
+			}
+		}
+	}
+}

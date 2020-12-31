@@ -1,0 +1,70 @@
+.masonry {
+	@include phone-landscape {
+		.mkd-ptf-gallery {
+
+			.mkd-ptf-gallery-sizer,
+			.mkd-ptf-gallery-item {
+				width: 100% !important;
+			}
+
+			.mkd-ptf-gallery-gutter {
+				width: 0;
+			}
+
+		}
+	}
+}
+
+@include ipad-landscape {
+	.single.single-portfolio-item .small-images .mkd-two-columns-66-33 .mkd-column1 .mkd-column-inner {
+		padding: 0 !important;
+	}
+
+	.single.single-portfolio-item .small-slider .mkd-two-columns-66-33 .mkd-column1 .mkd-column-inner {
+		padding: 0 !important;
+	}
+
+	.single.single-portfolio-item .big-images .mkd-column2 .mkd-column-inner,
+	.single.single-portfolio-item .big-slider .mkd-column2 .mkd-column-inner,
+	.single.single-portfolio-item .gallery .mkd-column2 .mkd-column-inner {
+		margin-right: 0 !important;
+	}
+
+	.mkd-portfolio-list-holder-outer.mkd-ptf-pinterest.mkd-portfolio-gallery-hover h2.mkd-ptf-item-title {
+		font-size: 22px;
+		line-height: 30px;
+		letter-spacing: 2px;
+	}
+
+	.mkd-portfolio-list-holder-outer.mkd-ptf-pinterest.mkd-portfolio-gallery-hover .mkd-ptf-item-text-holder .mkd-ptf-category-holder {
+		font-size: 15px;
+	}
+
+}
+
+@include laptop-landscape {
+
+	.mkd-portfolio-list-holder-outer.mkd-ptf-pinterest.mkd-portfolio-gallery-hover.mkd-ptf-pinterest-four-columns article,
+	.mkd-portfolio-list-holder-outer.mkd-ptf-pinterest.mkd-portfolio-gallery-hover.mkd-ptf-pinterest-four-columns .mkd-portfolio-list-masonry-grid-sizer {
+		width: 49%;
+	}
+}
+
+@include phone-landscape {
+
+	.mkd-portfolio-list-holder-outer.mkd-ptf-pinterest.mkd-portfolio-gallery-hover.mkd-ptf-pinterest-four-columns .mkd-portfolio-list-masonry-grid-gutter {
+		width: 0;
+	}
+
+	.mkd-portfolio-list-holder-outer.mkd-ptf-pinterest.mkd-portfolio-gallery-hover.mkd-ptf-pinterest-four-columns article,
+	.mkd-portfolio-list-holder-outer.mkd-ptf-pinterest.mkd-portfolio-gallery-hover.mkd-ptf-pinterest-four-columns .mkd-portfolio-list-masonry-grid-sizer {
+		width: 100%;
+	}
+}
+
+@include ipad-portrait {
+	.mkd-portfolio-list-holder-outer.mkd-ptf-with-spaces.mkd-ptf-three-columns .mkd-ptf-gap,
+	.mkd-portfolio-list-holder-outer.mkd-ptf-with-spaces.mkd-ptf-three-columns article {
+		width: 100% !important;
+	}
+}

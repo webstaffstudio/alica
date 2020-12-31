@@ -1,0 +1,407 @@
+/* ==========================================================================
+# Team style - begin
+========================================================================== */
+
+/* Team type main info on hover - begin
+========================================================================== */
+
+.mkd-team {
+
+	&.main-info-on-hover {
+
+		.mkd-team-name {
+			color: #fff;
+			margin-top: 0;
+			margin-bottom: 8px;
+			@include mkdTransform(translate3d(0, -35px, 0));
+			opacity: 0;
+			-webkit-transition: -webkit-transform .0s .3s, opacity .3s;
+			transition: transform .0s .3s, opacity .3s;
+		}
+
+		.mkd-team-social-wrapp {
+			margin: 10px 0 0 0;
+		}
+
+		.mkd-team-text {
+			padding: 0;
+		}
+
+		.mkd-team-social-wrapp span a {
+			font-size: 14px;
+			color: #fff;
+			margin-right: 16px;
+		}
+
+		.mkd-team-position {
+			color: #fff;
+			margin-top: -10px;
+			margin-bottom: 0px;
+			@include mkdTransform(translate3d(0, -35px, 0));
+			opacity: 0;
+			-webkit-transition: -webkit-transform .0s .3s, opacity .3s;
+			transition: transform .0s .3s, opacity .3s;
+		}
+
+		.mkd-team-image img {
+			width: 100%;
+			vertical-align: middle;
+		}
+
+		.mkd-team-social {
+			position: relative;
+		}
+
+		.mkd-team-social-inner {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			-webkit-transform: translateX(-50%) translateY(-50%);
+			-moz-transform: translateX(-50%) translateY(-50%);
+			transform: translateX(-50%) translateY(-50%);
+		}
+
+		.mkd-team-social-wrapp {
+			@include mkdTransform(translate3d(0, -35px, 0));
+			opacity: 0;
+			-webkit-transition: -webkit-transform .0s .3s, opacity .3s;
+			transition: transform .0s .3s, opacity .3s;
+		}
+
+		&:hover {
+			.mkd-team-name,
+			.mkd-team-position,
+			.mkd-team-social-wrapp {
+				opacity: 1;
+				@include mkdTransform(translate3d(0, 0, 0));
+				@include mkdTransition(all .25s ease-out);
+			}
+		}
+
+		.mkd-icon-shortcode.circle,
+		.mkd-icon-shortcode.square {
+			background-color: #fff;
+		}
+
+		.mkd-icon-shortcode.circle .mkd-icon-element,
+		.mkd-icon-shortcode.square .mkd-icon-element {
+			color: #375459;
+		}
+	}
+
+	&:not(.main-info-below-image) {
+		overflow: hidden;
+	}
+
+	.mkd-team-inner {
+		overflow: hidden;
+		width: 100%;
+	}
+
+	.mkd-team-image {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.mkd-team-description {
+		display: table;
+		width: 100%;
+		height: 100%;
+	}
+
+	.mkd-team-text {
+		padding: 20px 0 20px;
+	}
+
+	.mkd-team-social-wrapp {
+		margin: 15px 0 0 0;
+
+		.mkd-icon-shortcode.circle,
+		.mkd-icon-shortcode.square {
+			width: 1.2em;
+			height: 1.2em;
+			line-height: 1.2em;
+		}
+	}
+
+	.mkd-team-social {
+		display: table;
+		width: 100%;
+		height: 100%;
+
+		.mkd_icon_ion_icon:before,
+		.mkd_icon_linea_icon:before {
+			line-height: inherit;
+		}
+
+	}
+
+	.mkd-team-social-inner {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		position: relative;
+	}
+
+	.mkd-team-hover {
+		background-color: rgb(247, 151, 47);
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		@include mkdTransition(opacity 0.45s ease-out);
+	}
+
+	.mkd-team-social-holder {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		display: table-cell;
+		vertical-align: middle;
+		@include mkdTransition(opacity .45s ease-out);
+		@include mkdTransform(translateZ(0px));
+
+		.social_icon {
+			font-size: inherit;
+			line-height: inherit;
+		}
+
+		.social_icon {
+			display: block;
+
+			&:before {
+				display: block;
+			}
+
+		}
+
+	}
+
+	&:hover {
+
+		.mkd-team-social-holder {
+			opacity: 1;
+		}
+
+		.mkd-team-hover {
+			opacity: 0.8;
+		}
+	}
+
+}
+
+.touch .mkd-team .mkd-team-social-holder {
+	cursor: pointer;
+}
+
+/* Team type main info on hover - end
+========================================================================== */
+
+/* Team type main info below image - begin
+========================================================================== */
+
+.mkd-team.main-info-below-image {
+	-webkit-transform: translateZ(0);
+
+	&.mkd-team-boxed {
+		background-color: #fff;
+		padding: 34px 5px 26px 5px;
+		@include mkdTransition(all 0.2s ease-in-out);
+		perspective: 600px;
+
+		&:hover {
+			@include mkdBoxShadow(2px -6px 6px 0 rgba(0, 0, 0, .05));
+			@include mkdTransform(translate3d(0, 3px, 0));
+		}
+	}
+
+	.mkd-team-info {
+		text-align: center;
+
+		.mkd-team-name {
+			margin-bottom: 1px;
+		}
+
+		.mkd-team-name.light {
+			color: #fff;
+		}
+
+		.mkd-team-description.light p {
+			color: #fbfbfc;
+		}
+
+		.mkd-team-social-inner {
+			.mkd-icon-shortcode {
+				margin: 0 5px;
+			}
+		}
+
+		.mkd-team-position {
+			line-height: 27px;
+			font-weight: 400;
+			color: #fff;
+			background-color: $first-main-color;
+			font-family: $default-font-family;
+			display: inline-block;
+			padding: 0px 15px;
+			margin-bottom: 0;
+		}
+
+	}
+
+	.mkd-team-image {
+		overflow: visible;
+		text-align: center;
+		width: 135px;
+		margin: 0 auto;
+
+		img {
+			vertical-align: middle;
+
+			@include mkdBorderRadius(50%);
+		}
+
+	}
+
+	.mkd-team-social-wrapp ul {
+		list-style: none;
+		position: relative;
+		display: block;
+		z-index: 990;
+	}
+
+	.mkd-team-social-wrapp ul li {
+
+		&:first-child {
+			bottom: 56px; /* social share icon + space between icons */
+			transition-delay: .5s;
+		}
+
+		&:nth-child(2) {
+			bottom: 102px; /* previous icon position + icon height + space between icons */
+			transition-delay: .4s;
+		}
+
+		&:nth-child(3) {
+			bottom: 148px; /* previous icon position + icon height + space between icons */
+			transition-delay: .3s;
+		}
+
+		&:nth-child(4) {
+			bottom: 194px; /* previous icon position + icon height + space between icons */
+			transition-delay: .2s;
+		}
+
+		&:nth-child(5) {
+			bottom: 240px; /* previous icon position + icon height + space between icons */
+			transition-delay: .1s;
+		}
+
+	}
+
+	.mkd-team-social.normal-social .mkd-team-social-wrapp ul li {
+
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		text-align: center;
+		opacity: 0;
+		-webkit-transition: opacity .03s ease-out, position .1s ease-out;
+		transition: opacity .03s ease-out, position .1s ease-out;
+
+		&:first-child {
+			bottom: 50px;
+		}
+
+		&:nth-child(2) {
+			bottom: 90px;
+		}
+
+		&:nth-child(3) {
+			bottom: 130px;
+		}
+
+		&:nth-child(4) {
+			bottom: 170px;
+		}
+
+		&:nth-child(5) {
+			bottom: 210px;
+		}
+
+	}
+
+	.mkd-team-info {
+		margin-top: 18px;
+		padding: 0px 20px 10px 20px;
+	}
+
+	.mkd-team-text {
+		padding: 0;
+	}
+
+	&:hover {
+
+		.mkd-team-social-wrapp ul li {
+			opacity: 1;
+			cursor: pointer;
+
+			&:first-child {
+				transition-delay: .1s;
+			}
+
+			&:nth-child(2) {
+				transition-delay: .2s;
+			}
+
+			&:nth-child(3) {
+				transition-delay: .3s;
+			}
+
+			&:nth-child(4) {
+				transition-delay: .4s;
+			}
+
+			&:nth-child(5) {
+				transition-delay: .5s;
+			}
+
+		}
+
+	}
+	.mkd-team-social-wrapp.light .mkd-icon-shortcode.circle,
+	.mkd-team-social-wrapp.light .mkd-icon-shortcode.square {
+		background-color: transparent;
+		border: 1px solid #474747;
+		margin-right: 5px;
+	}
+
+	.mkd-icon-shortcode.circle .mkd-icon-element,
+	.mkd-icon-shortcode.square .mkd-icon-element {
+		font-size: 11px;
+	}
+
+	.mkd-icon-shortcode.circle,
+	.mkd-icon-shortcode.square {
+		background-color: #999;
+	}
+
+	.mkd-team-description {
+		margin-top: 16px;
+		color: #999;
+	}
+
+}
+
+/* Team type main info below image - end
+========================================================================== */
+
+/* ==========================================================================
+# Team style - end
+========================================================================== */

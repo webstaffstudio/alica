@@ -1,0 +1,321 @@
+.mkd-blog-holder {
+	&.mkd-blog-type-masonry {
+		margin-top: 40px;
+		opacity: 0;
+		transition: none !important;
+		overflow: visible !important;
+
+		&:not(.mkd-masonry-full-width) {
+			margin-left: -13px;
+			margin-right: -13px;
+		}
+
+		.mkd-post-excerpt {
+			padding-bottom: 10px;
+			margin-bottom: 0;
+		}
+
+		.mkd-post-title {
+			padding-top: 29px;
+			margin-bottom: 10px;
+			line-height: 38px;
+		}
+
+		.mkd-post-content {
+			position: relative;
+			overflow: hidden;
+
+			.mkd-post-excerpt {
+				margin-top: 26px;
+				word-wrap: break-word;
+			}
+
+			.mkd-categories-date {
+				padding-top: 13px;
+				padding-bottom: 13px;
+
+				.mkd-categories-list {
+					width: 65%;
+				}
+
+				.mkd-post-info {
+					float: right;
+					width: 35%;
+
+				}
+
+				.mkd-post-info-date {
+					width: 100%;
+					border-right: 0;
+					padding-right: 0;
+					text-align: right;
+				}
+			}
+		}
+		&:not(.mkd-masonry-simple) {
+			.format-quote {
+
+				h4 {
+					color: #fff;
+					margin-bottom: 55px;
+
+					a:hover {
+						color: #fff;
+					}
+				}
+
+				.mkd-post-content {
+					position: relative;
+					background-position: center center;
+					background-size: 100% 100%;
+					@include mkdTransition(all 0.3s ease-in-out);
+
+					h5.mkd-author-name {
+						color: #fff;
+					}
+
+					.mkd-post-text {
+						padding: 9px 30px 34px 38px;
+					}
+
+					.mkd-post-info-date {
+						color: #fff;
+						border-right: 0 !important;
+					}
+
+					&:hover {
+						background-size: 110% 110%;
+					}
+				}
+
+				.mkd-post-mark {
+					position: absolute;
+					bottom: 30px;
+					right: 41px;
+					font-size: 36px;
+					color: #fff;
+				}
+
+				.mkd-post-title .quote_author {
+					color: #fff;
+					text-transform: uppercase;
+				}
+
+				.mkd-post-title {
+					padding-bottom: 11px;
+				}
+
+				.mkd-post-content-background {
+					position: absolute;
+					top: -25%;
+					left: -25%;
+					height: 150%;
+					transform-origin: 50%;
+					width: 150%;
+					@include mkdAnimation(element-rotation 7.5s infinite cubic-bezier(0.46, 0.85, 0.7, 1.1));
+					animation-play-state: paused;
+					background-size: cover;
+
+				}
+
+				&:hover {
+					.mkd-post-content-background {
+						animation-play-state: running;
+					}
+				}
+			}
+		}
+		&:not(.mkd-masonry-simple) {
+			.format-link {
+
+				h4 {
+					color: #fff;
+
+					a:hover {
+						color: #fff;
+					}
+				}
+
+				.mkd-post-content {
+					position: relative;
+					background-position: center center;
+					background-size: 100% 100%;
+					z-index: 1;
+					@include mkdTransition(all 0.3s ease-in-out);
+
+					.mkd-post-text {
+						padding: 40px 20px 53px 40px;
+						z-index: 1;
+					}
+
+					.mkd-post-title {
+						margin-bottom: 0;
+						@include mkdTransition(opacity 0.25s ease-in-out);
+
+						a:before {
+							content: '';
+							position: absolute;
+							top: 0;
+							left: 0;
+							height: 100%;
+							width: 100%;
+						}
+					}
+
+					h5.mkd-author-name {
+						color: #fff;
+					}
+
+					.mkd-post-info-date {
+						position: static;
+						border-right: 0 !important;
+						color: #fff;
+
+						.mkd-blog-date-icon {
+							color: #fff;
+						}
+					}
+
+					&:hover {
+						background-size: 110% 110%;
+					}
+				}
+
+				.mkd-post-mark {
+					position: absolute;
+					bottom: 20px;
+					right: 20px;
+					font-size: 36px;
+					color: #fff;
+				}
+
+				h3.mkd-post-title {
+					margin-bottom: 10px;
+					padding-bottom: 20px;
+					margin-top: 11px;
+				}
+
+				.mkd-post-content-background {
+					position: absolute;
+					top: -25%;
+					left: -25%;
+					height: 150%;
+					transform-origin: 50%;
+					width: 150%;
+					@include mkdAnimation(element-rotation 7.5s infinite cubic-bezier(0.46, 0.85, 0.7, 1.1));
+					animation-play-state: paused;
+					background-size: cover;
+
+				}
+
+				&:hover {
+					.mkd-post-content-background {
+						animation-play-state: running;
+					}
+				}
+
+			}
+		}
+
+		article {
+			display: block;
+			width: 33.33%;
+			padding: 0 13px;
+			text-align: left;
+			vertical-align: top;
+			z-index: 100;
+			margin: 0 0 26px;
+			overflow: hidden;
+
+			@include mkdBoxSizing(border-box);
+			@include mkdTransition(border-color 0.15s ease-out);
+
+			&.format-quote {
+				position: relative;
+				.mkd-post-text,
+				.mkd-post-mark {
+					z-index: 10;
+				}
+			}
+
+		}
+		.mkd-blog-masonry-grid-sizer {
+			width: 33.33%;
+		}
+		.mkd-blog-masonry-grid-gutter {
+			width: 0;
+		}
+
+		#infscr-loading {
+			position: absolute;
+			bottom: -35px;
+			left: 50%;
+			@include mkdTransform(translateY(-50%));
+		}
+
+		&.mkd-masonry-no-image {
+			article {
+				@include mkdTransition(all .15s cubic-bezier(.33, .66, .66, 1));
+				-webkit-backface-visibility: hidden;
+				-webkit-perspective: 1000px;
+				-webkit-transform-style: preserve-3d;
+				@include mkdTransform(translateZ(0));
+				.mkd-post-text {
+					@include mkdTransition(all .15s cubic-bezier(.33, .66, .66, 1));
+					padding-bottom: 30px;
+				}
+
+				&:hover {
+					@include mkdTransform(translate3d(0, -4px, 0));
+					.mkd-post-text {
+						-webkit-box-shadow: 2px 2px 4px #eee;
+						box-shadow: 2px 2px 4px #eee;
+					}
+				}
+			}
+		}
+
+		&.mkd-masonry-simple {
+			article {
+				@include mkdTransition(all .15s cubic-bezier(.33, .66, .66, 1));
+				-webkit-backface-visibility: hidden;
+				-webkit-perspective: 1000px;
+				-webkit-transform-style: preserve-3d;
+				@include mkdTransform(translateZ(0));
+				.mkd-post-text {
+					-webkit-box-shadow: 1px 1px 3px #eee;
+					box-shadow: 1px 1px 3px #eee;
+					@include mkdTransition(all .15s cubic-bezier(.33, .66, .66, 1));
+				}
+				&:hover {
+					@include mkdTransform(translate3d(0, -4px, 0));
+					.mkd-post-text {
+						-webkit-box-shadow: 2px 2px 4px #eee;
+						box-shadow: 2px 2px 4px #eee;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+.mkd-blog-holder {
+	&.mkd-blog-type-masonry.mkd-masonry-simple {
+		h2.mkd-post-title {
+			font-size: 30px;
+			line-height: 38px;
+			padding-top: 10px;
+		}
+		article {
+			.mkd-post-text {
+				padding-top: 42px;
+				padding-bottom: 49px;
+			}
+		}
+	}
+}
+
+.mkd-blog-load-more-button-holder {
+	text-align: center;
+}

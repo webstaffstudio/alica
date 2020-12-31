@@ -1,0 +1,82 @@
+1.9
+- Added WordPress 5.5 compatibility
+- Added WooCommerce 4.6.0 compatibility
+- Updated Mikado Instagram Feed to 2.0
+- Updated Mikado Twitter Feed to 1.0.2
+- Updated Mikado Core to 1.0.6
+- Updated WPBakery Page Builder to 6.4.1
+- Updated Revolution Slider to 6.2.23
+- Updated Timetable to 6.3
+- Fixed blog post comment section appearance
+
+1.8
+- Added WooCommerce 3.7.0 compatibility
+- Updated WPBakery Page Builder to 6.0.5
+- Updated Revolution Slider to 6.1.2
+- Updated Mikado Core to 1.0.5
+- Fixed Facebook share button
+
+1.7
+- Added WooCommerce 3.6.3 compatibility
+- Updated WPBakery Page Builder to 6.0.2
+- Improved saving of page options
+
+1.6.1
+- Minor improvements
+
+1.6
+- Added WooCommerce 3.6.1 compatibility
+- Minor changes and fixes
+
+1.5
+- Added WooCommerce 3.5.7 compatibility
+- Added compatibility with Gutenberg plugin
+- Updated WPBakery Page Builder to 5.7
+- Updated Revolution Slider to 5.4.8.3
+- Updated Mikado Core to 1.0.4
+- Updated Mikado Instagram Feed to 1.0.2
+- Updated Mikado Twitter Feed to 1.0.1
+- Updated Timetable to 5.8
+- Improved framework files
+
+1.4
+- Added WooCommerce 3.4.3 compatibility
+- Updated Visual Composer to 5.5.2
+- Updated Revolution slider to version 5.4.8
+- Updated Envato Market to 2.0.0
+- Updated Mikado Core plugin to version 1.0.3
+- Improved menu import functionality
+
+1.3.1
+- Updated Revolution slider to version 5.4.6.4
+- Updated Timetable to version 5.2
+- Updated Mikado Core plugin to version 1.0.2
+- Improved import for Revolution slider slides
+
+1.3
+- Added WooCommerce 3.2.5 compatibility
+- Added recommended plugins (WooCommerce, Contact Form 7, The Events Calendar)
+- Added Envato Market plugin as required
+- Updated Visual Composer to 5.4.5
+- Updated Revolution slider to version 5.4.6.3.1
+- Updated Timetable to version 4.0
+- Updated Mikado Core plugin to version 1.0.1
+- Fixed header misalignment on Google Chrome
+- Improved import functionality
+
+1.2
+- Added WooCommerce 3.1.2 compatibility
+- Updated Visual Composer to 5.2.1
+- Updated Revolution slider to version 5.4.5.2
+- Fixed potential security issue when saving theme options
+
+1.1
+- Added WooCommerce 3+ compatibility
+- Updated Visual Composer to 5.1.1
+- Updated Revolution slider to version 5.4.5
+
+1.0.2
+- Fixed title showing on Events Calendar pages
+
+1.0.1
+- Animation Effects enhanced

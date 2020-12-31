@@ -1,0 +1,99 @@
+.mkd-portfolio-list-holder-outer.mkd-ptf-masonry {
+
+	article.mkd-masonry-without-space {
+		padding: 0 !important;
+	}
+
+	.mkd-portfolio-masonry-item {
+		position: relative;
+		height: 100%;
+	}
+
+	article .mkd-item-image-holder {
+		height: 100%;
+		overflow: hidden;
+	}
+
+	article .mkd-item-image-holder img {
+		width: 100%;
+		max-height: 100%;
+		vertical-align: middle;
+	}
+
+	article {
+		padding: 12.5px;
+
+		@include mkdBoxSizing(border-box);
+	}
+
+	.mkd-portfolio-list-masonry-grid-gutter {
+		width: 0;
+	}
+
+	.mkd-portfolio-list-masonry-grid-sizer,
+	article.mkd-default-masonry-item,
+	article.mkd-large-height-masonry-item {
+		width: 25%;
+	}
+
+	article.mkd-large-height-masonry-item .mkd-item-image-holder img {
+		width: auto;
+		height: 100%;
+	}
+
+	.mkd-large-width-masonry-item,
+	.mkd-large-width-height-masonry-item {
+		width: 50%;
+	}
+
+	&:not(.mkd-ptf-cursor-follow) {
+		.mkd-ptf-item-text-overlay-inner {
+			opacity: 0;
+			@include mkdTransform(translate3d(0,10px,0));
+			-webkit-transition: -webkit-transform .0s .35s, opacity .35s cubic-bezier(0.61, 0.92, 0, 0.21);
+			transition: transform .0s .35s, opacity .35s cubic-bezier(0.61, 0.92, 0, 0.21);
+		}
+
+		.mkd-item-image-holder img {
+			@include mkdTransition(all .3s cubic-bezier(0.22, 0.61, 0.36, 1));
+			@include mkdTransform(scale(1) translateZ(0));
+		}
+		article:hover {
+			.mkd-ptf-item-text-overlay-inner {
+				@include mkdTransition(all .4s cubic-bezier(0.22, 0.61, 0.36, 1));
+				@include mkdTransform(translate3d(0,0,0));
+				opacity:1;
+			}
+		}
+	}
+
+	&.mkd-ptf-cursor-follow {
+		.mkd-portfolio-masonry-item {
+			overflow: hidden;
+		}
+		.mkd-ptf-item-text-overlay {
+			top:-100%;
+			opacity: 1;
+		}
+	}
+
+	&.mkd-hover-dark {
+		.mkd-ptf-item-text-overlay {
+		    background-color: rgba(26, 26, 26, 0.85);
+		}
+		article {
+			.mkd-ptf-item-title {
+				color: #fff;
+			}
+		}
+	}
+
+	&.mkd-hover-light {
+		.mkd-ptf-item-text-overlay {
+			.mkd-ptf-portfolio-overlay-icon {
+				color: #777;
+			}
+		    background-color: rgba(#fff, 0.95);
+		}
+	}
+}

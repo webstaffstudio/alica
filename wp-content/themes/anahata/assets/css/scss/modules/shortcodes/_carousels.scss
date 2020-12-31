@@ -1,0 +1,168 @@
+/* ==========================================================================
+# Carousels style - begin
+========================================================================== */
+
+.mkd-carousel-holder {
+
+	.mkd-carousel-item-holder {
+		position: relative;
+
+		/* Image zoom - begin
+		========================================================================== */
+
+		.mkd-carousel-first-image-holder.mkd-image-zoom img {
+			@include mkdTransition(transform 0.35s cubic-bezier(0.61, 0.92, 0, 0.21));
+			-webkit-backface-visibility: hidden;
+		}
+
+		.mkd-carousel-first-image-holder.mkd-image-zoom:hover img {
+			@include mkdTransform(scale(1.3));
+		}
+
+		/* Image zoom - end
+		========================================================================== */
+
+		/* Image change on hover - begin
+		========================================================================== */
+
+		.mkd-carousel-first-image-holder.mkd-image-change {
+			position: relative;
+			opacity: 1;
+			z-index: 5;
+			@include mkdTransition(all .35s cubic-bezier(0.61, 0.92, 0, 0.21));
+
+			img {
+				@include mkdTransition(all .35s cubic-bezier(0.61, 0.92, 0, 0.21));
+			}
+
+			&:hover {
+
+				img {
+					opacity:0;
+				}
+
+			}
+		}
+
+		&:hover .mkd-carousel-first-image-holder.mkd-has-hover-image.mkd-image-change img {
+			opacity: 0;
+		}
+
+		.mkd-carousel-second-image-holder {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			opacity: 0;
+			@include mkdTransform(translate3d(-50%, -50%, 0));
+			height: 100%;
+			width: 100%;
+			@include mkdTransition(all .35s cubic-bezier(0.61, 0.92, 0, 0.21));
+
+		}
+
+		&:hover .mkd-carousel-second-image-holder {
+			opacity: 1;
+		}
+
+		/* Image change on hover - end
+		========================================================================== */
+
+	}
+
+	/* Carousel navigation - begin
+	========================================================================== */
+
+	.mkd-carousel.owl-carousel {
+
+		.owl-stage-outer {
+			padding:20px;
+			margin:-20px;
+		}
+
+		.owl-nav {
+
+			width: 100%;
+
+			.owl-prev {
+				position: absolute;
+				top: 50%;
+				@include mkdTransform(translateY(-50%));
+				left: 2%;
+			}
+
+			.owl-next {
+				position: absolute;
+				top: 50%;
+				@include mkdTransform(translateY(-50%));
+				right: 2%;
+			}
+
+			.mkd-prev-icon,
+			.mkd-next-icon {
+				display: inline-block;
+				width: 42px;
+				height: 42px;
+				@include mkdBorderRadius(50%);
+				border: 2px solid #74797b;
+				text-align: center;
+
+				i {
+					font-size: 22px;
+					line-height: 40px;
+					color: #74797b;
+				}
+
+			}
+
+		}
+
+		.owl-dots {
+			text-align: center;
+
+			.owl-dot {
+				display: inline-block;
+			}
+
+			.owl-dot span {
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				margin: 3px;
+				opacity: 0.5;
+				@include mkdBorderRadius(20px);
+				background: #74797b;
+			}
+
+			.owl-dot.active span {
+				opacity: 1;
+			}
+
+		}
+
+	}
+
+	/* Carousel navigation - end
+	========================================================================== */
+	.mkd-carousel-item-outer-holder.border {
+		border-right: 1px solid #e5e5e5;
+	}
+
+	.border .mkd-carousel-item-holder {
+		padding: 20px;
+		border-bottom: 1px solid #e5e5e5;
+		text-align: center;
+	}
+
+	.border .mkd-carousel-item-holder:last-child {
+		border-bottom: 0;
+	}
+
+	.owl-item:last-child .mkd-carousel-item-outer-holder.border {
+		border-right: 0;
+	}
+
+}
+
+/* ==========================================================================
+# Carousels style - end
+========================================================================== */

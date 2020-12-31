@@ -1,0 +1,239 @@
+.mkd-blog-holder.mkd-blog-type-masonry-gallery {
+	opacity: 0;
+	article {
+		width: 25%;
+		overflow: hidden;
+
+		&.mkd-post-size-large-width, &.mkd-post-size-large-width-height {
+			width: 50%;
+		}
+
+		.mkd-post-image {
+			height: 100%;
+
+			a {
+				display: block;
+				height: 100%;
+
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					opacity:0.7;
+					@include mkdTransition(all .35s cubic-bezier(0.61, 0.92, 0, 0.21));
+					@include mkdGradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 1%, rgba(0, 0, 0, 0) 56%, rgba(0, 0, 0, 0) 74%);
+				}
+
+				&:hover {
+					&:before { 
+						opacity:1;
+					}
+				}
+
+				img {
+					height: 100%;
+				}
+			}
+		}
+
+		.mkd-date-title {
+			position: absolute;
+			left: 30px;
+			bottom: 29px;
+			width: calc(100% - 60px);
+
+			.mkd-post-info-date {
+				color: #fff;
+
+				span i {
+					display: none;
+				}
+			}
+
+			.mkd-post-title {
+				color: #fff;
+				margin-bottom: 0;
+				padding-top: 1px;
+
+				a:hover {
+					color: #fff;
+				}
+
+				a:before {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+
+		&.mkd-post-size-large-width .mkd-post-image a img {
+			width: auto;
+			max-width: none;
+		}
+
+		&.format-quote, &.format-link {
+			.mkd-post-mark {
+				position: absolute;
+				color: #fff;
+				a {
+					color: #fff;
+				}
+			}
+		}
+
+		&.format-quote {
+			.mkd-post-mark {
+				font-size: 50px;
+				right: 18px;
+				bottom: 20px;
+				z-index: 20;
+			}
+
+			.mkd-masonry-gallery-quote-holder {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+
+				.mkd-masonry-gallery-quote-holder-bgrnd {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 1;
+					@include mkdTransition(all 1s);
+				}
+
+				&:hover {
+					.mkd-masonry-gallery-quote-holder-bgrnd {
+						@include mkdTransform(scale(2));
+					}
+				}
+			}
+
+			.mkd-masonry-gallery-quote-author {
+				display: table;
+				width: 73%;
+				height: 100%;
+				margin: 0 auto;
+				position: relative;
+				z-index: 20;
+
+				.mkd-masonry-gallery-quote-author-inner {
+					display: table-cell;
+					vertical-align: middle;
+				}
+
+				.mkd-masonry-gallery-quote {
+					display: block;
+					color: #fff;
+					margin-bottom: 37px;
+					text-transform: none;
+				}
+
+				.mkd-masonry-gallery-author {
+					display: block;
+					color: #fff;
+					margin-top: 22px;
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		&:not(.format-quote) {
+			.mkd-post-image {
+				a {
+					@include mkdTransition(all .3s ease-out);
+					-webkit-transform-origin: 50% 100%;
+					transform-origin: 50% 100%;
+					&:before {
+						@include mkdTransition(all .3s ease-out);
+					}
+				}
+			}
+
+			&:hover {
+				.mkd-post-image {
+					a {
+						&:before {
+							-webkit-transform-origin: 50% 100%;
+							transform-origin: 50% 100%;
+						}
+					}
+				}
+			}
+		}
+
+		&.format-video {
+			.mkd-video-post-link {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 56px;
+				height: 56px;
+				font-size: 56px;
+				color: #fff;
+
+				@include mkdTransform(translate(-50%, -50%));
+
+			}
+		}
+
+		&.format-link {
+			.mkd-date-title {
+				width: calc(100% - 100px);
+			}
+
+			.mkd-post-mark {
+				font-size: 30px;
+				right: 34px;
+				bottom: 38px;
+			}
+		}
+
+		&.format-gallery {
+			.mkd-blog-gallery, .owl-wrapper-outer {
+				display: block;
+				height: 100%;
+				width: 100%;
+			}
+			.owl-wrapper, .owl-item, .mkd-blog-gallery-item {
+				height: 100%;
+			}
+			.mkd-blog-gallery-item {
+				background-size: cover;
+
+				a {
+					display: block;
+					height: 100%;
+					width: 100%;
+				}
+
+			}
+
+			.owl-stage-outer,
+			.owl-carousel .owl-stage {
+				height: 100% !important;
+			}
+
+		}
+	}
+
+	.mkd-blog-masonry-gallery-grid-sizer {
+		width: 25%;
+	}
+	.mkd-blog-masonry-gallery-grid-gutter {
+		width: 0;
+	}
+}

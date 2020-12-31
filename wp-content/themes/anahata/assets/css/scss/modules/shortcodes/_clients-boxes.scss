@@ -1,0 +1,189 @@
+/* ==========================================================================
+   Clients Boxes shortcode style - begin
+   ========================================================================== */
+
+.mkd-clients-boxes-holder {
+	@include mkdRelativeHolderLayout();
+
+	$columns: ('three', 'four');
+	@for $i from 0 to length($columns) {
+		&.mkd-cb-columns-#{nth($columns, $i+1)} {
+			$column_width: 100%/($i+3);
+
+			.mkd-cb-item {
+				width: $column_width;
+
+				@media only screen and (min-width: $ipad-portrait-plus-pixel) {
+
+					@if ($i == 0) {
+
+						&:nth-child(3n) {
+
+							.mkd-cb-item-inner {
+
+								&:before {
+									display: none;
+								}
+							}
+						}
+
+						&:nth-last-child(-n+3) {
+							margin: 0;
+
+							.mkd-cb-item-inner {
+								margin: 0;
+
+								&:after {
+									display: none;
+								}
+							}
+						}
+
+					} @else if ($i == 1) {
+
+						&:nth-child(4n) {
+
+							.mkd-cb-item-inner {
+
+								&:before {
+									display: none;
+								}
+							}
+						}
+
+						&:nth-last-child(-n+4) {
+							margin: 0;
+
+							.mkd-cb-item-inner {
+								margin: 0;
+
+								&:after {
+									display: none;
+								}
+							}
+						}
+					}
+
+					&:nth-child(#{$i+3}n+1) {
+						clear: both;
+					}
+				}
+			}
+		}
+	}
+
+	.mkd-cb-item {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		float: left;
+		margin: 0 0 77px;
+		@include mkdBoxSizing(border-box);
+
+		.touch & {
+			cursor: pointer;
+		}
+
+		.mkd-cb-item-inner {
+			@include mkdRelativeHolderLayout();
+			margin: 0 0 33px;
+			width: initial;
+		}
+
+		.mkd-cb-link {
+			position: relative;
+			display: block;
+		}
+	}
+
+	/***** Hover Types - begin *****/
+
+	&.mkd-cb-hover-switch-images {
+
+		.mkd-cb-item {
+
+			&:hover {
+
+				.mkd-cb-image {
+					opacity: 0;
+					@include mkdAnimation(element-pop .25s ease-in-out);
+				}
+
+				.mkd-cb-hover-image {
+					opacity: 1;
+					@include mkdAnimation(element-pop .25s ease-in-out);
+				}
+			}
+
+			.mkd-cb-image {
+				position: relative;
+				display: block;
+				width: auto;
+				margin: 0 auto;
+				height:auto !important;
+				max-width: 100% !important;
+				opacity: 1;
+				@include mkdTransition(opacity .25s ease-in-out);
+			}
+
+			.mkd-cb-hover-image {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: auto;
+				opacity: 0;
+				height: auto !important;
+    			max-width: 100% !important;
+			}
+		}
+	}
+
+	&.mkd-cb-hover-roll-over {
+
+		.mkd-cb-item {
+
+			&:hover {
+
+				.mkd-cb-image {
+					@include mkdTransform(translateY(100%));
+				}
+
+				.mkd-cb-hover-image {
+					@include mkdTransform(translate(-50%, 0));
+				}
+			}
+
+			.mkd-cb-item-inner,
+			.mkd-cb-link {
+				overflow: hidden;
+			}
+
+			.mkd-cb-image {
+				position: relative;
+				display: block;
+				width: auto;
+				margin: 0 auto;
+				-webkit-transition: -webkit-transform .4s ease;
+				-moz-transition: -moz-transform .4s ease;
+				transition: transform .4s ease;
+			}
+
+			.mkd-cb-hover-image {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				width: auto;
+				-webkit-transition: -webkit-transform .4s ease;
+				-moz-transition: -moz-transform .4s ease;
+				transition: transform .4s ease;
+				@include mkdTransform(translate(-50%, -100%));
+			}
+		}
+	}
+
+	/***** Hover Types - end *****/
+}
+
+/* ==========================================================================
+   Clients Boxes shortcode style - end
+   ========================================================================== */

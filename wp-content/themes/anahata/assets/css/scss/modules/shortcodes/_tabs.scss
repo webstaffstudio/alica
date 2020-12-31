@@ -1,0 +1,301 @@
+/* ==========================================================================
+# Tabs style - begin
+========================================================================== */
+.mkd-tabs {
+
+	.mkd-tab-container {
+		position: relative;
+		background-size: contain;
+		background-position: 100% 50%;
+		background-repeat: no-repeat;
+
+		@include mkdBoxSizing(border-box);
+		opacity: 0;
+		@include mkdTransition(opacity .4s ease);
+
+		&.mkd-visible {
+			opacity: 1;
+		}
+	}
+
+	.mkd-tabs-nav {
+		display: block;
+		position: relative;
+		list-style: none outside none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		vertical-align: middle;
+
+		li a {
+			display: block;
+			padding: 18px 30px;
+			color: #505050;
+			background-color: #fff;
+			letter-spacing: 1px;
+			font-weight: 400;
+			font-family: $default-font-family;
+
+			@include mkdBoxSizing(border-box);
+			@include mkdTransition(color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out);
+
+			.mkd-tab-title-subtitle, .mkd-tab-title, .mkd-tab-subtitle {
+				display: block;
+			}
+
+			.mkd-tab-subtitle {
+				font-size: 14px;
+				color: #a4a2a2;
+				margin-top: 6px;
+				letter-spacing: 0;
+				font-family: $default-font-family;
+			}
+		}
+
+		li.ui-state-active a {
+			position: relative;
+			z-index: 20;
+		}
+
+	}
+
+	%linecontent {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.mkd-tab-line {
+		&:after {
+			@extend %linecontent;
+		}
+	}
+
+	.mkd-tab-line-inner {
+		@extend %linecontent;
+		overflow: hidden;
+		&:after {
+			background-color: $first-main-color;
+			@extend %linecontent;
+			z-index: 300;
+		}
+	}
+
+	@include keyframes(stretchOutVertical) {
+		0%, 100% {
+			top: 0;
+			height: 100%;
+		}
+
+		50% {
+			top: -50%;
+			height: 150%;
+		}
+	}
+
+	@include keyframes(stretchOutHorizontal) {
+		0%, 100% {
+			left: 0;
+			width: 100%;
+		}
+
+		50% {
+			left: -50%;
+			width: 150%;
+		}
+	}
+
+}
+
+/* Horizontal tabs styles
+   ========================================================================== */
+.mkd-tabs.mkd-horizontal {
+
+	.mkd-tabs-nav {
+		border-bottom: 1px solid #ebebeb;
+	}
+
+	.mkd-tabs-nav li {
+		background-color: #fff;
+
+		a {
+			color: #505050;
+			font-family: $default-font-family;
+			background-color: transparent;
+		}
+	}
+
+	.mkd-tabs-nav li.ui-tabs-active:not(.mkd-tab-line) a:after {
+		background-color: $first-main-color;
+	}
+
+	.mkd-tabs-nav li:not(.mkd-tab-line) {
+		display: table-cell;
+		vertical-align: middle;
+		position: relative;
+
+		a {
+			padding: 13px 13px;
+			border-left: 0;
+			margin-right: 10px;
+
+			&:after {
+				content: '';
+				background: transparent;
+				position: absolute;
+				width: 100%;
+				height: 5px;
+				left: 0;
+				bottom: 0;
+			}
+		}
+	}
+
+	.mkd-tab-line {
+		position: absolute;
+		width: 0;
+		height: 5px;
+		left: 0;
+		bottom: 0;
+		z-index: 300;
+		@include mkdTransition(all 0.4s ease .03s);
+	}
+
+	.mkd-tab-container {
+		padding: 38px 0;
+		top: -1px;
+		position: relative;
+		z-index: 10;
+	}
+
+	.mkd-tabs-nav:hover {
+		.mkd-tab-line-inner {
+			&:after {
+				@include animation(stretchOutHorizontal, 1.8s, infinite, ease, .0s)
+			}
+		}
+	}
+
+}
+
+/* Vertical tabs styles
+   ========================================================================== */
+.mkd-tabs.mkd-vertical {
+
+	.mkd-tabs-nav {
+		float: left;
+		width: 32%;
+
+		@include mkdBoxSizing(border-box);
+
+		li:not(.mkd-tab-line) {
+			display: block;
+			border-bottom: 1px solid #f2f2f2;
+
+			&:last-child {
+				border-bottom: 0;
+			}
+
+			a {
+				border-bottom: 0;
+				padding: 23px 32px;
+
+				.mkd-tab-title {
+					font-size: 18px;
+					letter-spacing: 0;
+				}
+
+				&:after {
+					content: '';
+					background: #ebebeb;
+					position: absolute;
+					width: 5px;
+					height: 100%;
+					left: 0;
+					top: 0;
+				}
+			}
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+
+		.mkd-tab-line {
+			position: absolute;
+			top: 0;
+			height: 0;
+			left: 0;
+			width: 5px;
+			z-index: 300;
+			@include mkdTransition(all 0.4s ease .03s);
+		}
+	}
+
+	.mkd-tab-container {
+		float: left;
+		padding: 0 45px 10px 45px;
+		width: 68%;
+
+		@include mkdBoxSizing(border-box);
+	}
+
+	&.mkd-vertical-nav-width-small {
+		.mkd-tabs-nav {
+			width: 22.92%;
+		}
+
+		.mkd-tab-container {
+			width: 77.08%;
+		}
+	}
+
+	.mkd-tabs-nav:hover {
+		.mkd-tab-line-inner {
+			&:after {
+				@include animation(stretchOutVertical, 1.8s, infinite, ease, .0s)
+			}
+		}
+	}
+
+}
+
+/* Tabs with icon and text styles start
+   ========================================================================== */
+
+.mkd-tabs.mkd-tab-text-icon .mkd-tabs-nav li a {
+
+	.mkd-tab-text-after-icon {
+		padding-left: 10px;
+		@include mkdTransition(initial);
+	}
+	.mkd-icon-frame {
+		float: left;
+	}
+	.mkd-tab-title-subtitle {
+		padding-left: 20px;
+	}
+}
+
+/* Tabs with icon styles - start
+   ========================================================================== */
+
+.mkd-tabs.mkd-tab-icon .mkd-tabs-nav li a {
+	i,
+	span {
+		@include mkdTransition(initial);
+	}
+
+	.mkd-icon-frame {
+		display: inline-block;
+		min-width: 20px;
+	}
+
+}
+
+/* ==========================================================================
+# Tabs style - end
+========================================================================== */

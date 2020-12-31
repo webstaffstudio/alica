@@ -1,0 +1,37 @@
+/* ==========================================================================
+# Portfolio Single Big Images - begin
+========================================================================== */
+
+.mkd-portfolio-single-holder.big-images {
+
+	.mkd-big-image-holder {
+		margin-bottom: 78px;
+	}
+
+	.mkd-image-author-holder {
+		margin-top: 12px;
+	}
+
+	h2.mkd-portfolio-item-title {
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+
+	.mkd-portfolio-single-media {
+		margin-bottom: 38px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.mkd-portfolio-item-content {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+}
+
+/* ==========================================================================
+# Portfolio Single Big Images - end
+========================================================================== */

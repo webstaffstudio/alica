@@ -1,0 +1,265 @@
+@import 'types/masonry_full_width';
+@import 'types/masonry';
+@import 'types/standard';
+@import 'types/simple';
+@import 'types/masonry_gallery';
+
+.mkd-blog-holder {
+
+	article {
+		padding-bottom: 0;
+
+		.mkd-post-image {
+
+			overflow: hidden;
+
+			a {
+				display: block;
+				@include mkdTransition(all 0.3s ease-in-out);
+
+				img {
+					vertical-align: middle;
+				}
+			}
+		}
+
+		.mkd-post-text-inner {
+
+			> h1:not(.mkd-post-title),
+			> h2:not(.mkd-post-title),
+			> h3:not(.mkd-post-title),
+			> h4:not(.mkd-post-title),
+			> h5:not(.mkd-post-title),
+			> h6:not(.mkd-post-title) {
+				margin: 15px 0;
+			}
+		}
+
+		.mkd-post-title {
+			margin-top: 0px;
+			padding-top: 36px;
+			margin-bottom: 8px;
+		}
+
+		&.sticky {
+			.mkd-post-title a {
+				color: $first-main-color;
+			}
+		}
+
+		.mkd-post-info {
+			font-weight: 400;
+			color: #a4a2a2;
+			font-size: 14px;
+
+			a {
+				color: #a4a2a2;
+				font-family: $default-font-family;
+				font-size: 14px;
+
+				@include mkdTransition(color 0.15s ease-out);
+
+				&:hover {
+					color: $first-main-color;
+				}
+			}
+
+			.mkd-blog-date-icon {
+				padding-right: 6px;
+				color: $first-main-color;
+				font-size: 16px;
+			}
+
+			.mkd-post-info-author-icon {
+				padding-right: 7px;
+				color: $first-main-color;
+				color: $first-main-color;
+				font-size: 16px;
+			}
+
+			.mkd-post-info-comments-icon {
+				padding-right: 3px;
+				color: $first-main-color;
+			}
+
+			.mkd-like i {
+				margin-right: 9px;
+				color: $first-main-color;
+			}
+
+			.mkd-like.liked i {
+				color: $first-main-color;
+			}
+
+			.mkd-like-number {
+				margin-right: 6px;
+			}
+			.mkd-comment-number {
+				margin-right: 1px;
+			}
+
+			span.icon_tags {
+				margin-right: 10px;
+				font-size: 14px;
+			}
+
+			> div {
+				display: inline-block;
+				position: relative;
+				padding-right: 20px;
+			}
+		}
+
+		.mkd-post-excerpt {
+			margin-top: 31px;
+			margin-bottom: 32px;
+		}
+
+		&.format-quote {
+
+			.mkd-category {
+
+				span.icon_tags, a {
+					color: #fff !important;
+				}
+			}
+
+			.mkd-category-holder {
+				margin-top: 0;
+			}
+
+			ul {
+				margin: 0 !important;
+			}
+
+			.mkd-post-content .mkd-post-text {
+				position: relative;
+			}
+
+			.mkd-post-title {
+				margin-top: 0;
+				padding-top: 0;
+
+				h2 {
+					color: #fff;
+					margin-bottom: 25px;
+
+					a:hover {
+						color: #fff;
+					}
+
+					span {
+						@include mkdTransition(color 0.15s ease-out);
+					}
+
+				}
+
+				span.mkd-quote_author {
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 36px;
+					font-family: $default-font-family;
+					color: #fff;
+				}
+			}
+		}
+
+		&.format-link {
+
+			.mkd-category {
+
+				span.icon_tags, a {
+					color: #fff !important;
+				}
+			}
+
+			.mkd-category-holder {
+				margin-top: 8px;
+			}
+
+			ul {
+				margin: 0 !important;
+			}
+
+			h5.mkd-author-name {
+				color: #fff !important;
+			}
+
+			.mkd-post-content .mkd-post-text {
+				position: relative;
+
+				h5.mkd-author-name {
+					color: #bbb;
+				}
+			}
+		}
+
+	}
+
+	&:not(.mkd-masonry-simple):not(.mkd-blog-type-simple) {
+		article.format-link {
+			.mkd-post-title {
+				margin-bottom: 7px;
+				color: #fff;
+			}
+		}
+	}
+
+	&:not(.mkd-masonry-simple) article.format-link .mkd-post-text,
+	&:not(.mkd-masonry-simple) article.format-quote .mkd-post-text {
+		position: relative;
+		background-color: transparent;
+		box-shadow: none;
+		z-index: 1;
+	}
+
+	&:not(.mkd-masonry-simple):not(.mkd-blog-type-simple) article.format-link .mkd-post-title a:hover {
+		color: #fff;
+	}
+}
+
+.mkd-blog-infinite-scroll-button {
+	display: none;
+}
+
+.mkd-filter-blog-holder {
+
+	text-align: center;
+
+	ul {
+		margin: 0;
+		padding: 19px 21px;
+	}
+
+	li {
+		display: inline-block;
+		padding: 0 8px;
+		cursor: pointer;
+		font-size: 15px;
+
+		@include mkdTransition(color 0.25s ease-in-out);
+
+		&:last-child {
+			padding-right: 0;
+		}
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}
+
+.mkd-single-links-pages {
+	margin-top: 20px;
+
+	.mkd-single-links-pages-inner {
+		> a,
+		> span {
+			display: inline-block;
+			height: 30px;
+			width: 30px;
+			line-height: 30px;
+			text-align: center;
+		}
+	}
+}

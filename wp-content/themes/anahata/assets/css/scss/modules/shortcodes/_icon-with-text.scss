@@ -1,0 +1,139 @@
+.mkd-iwt {
+	$icon-tiny-content-padding: 60px;
+	$icon-small-content-padding: 80px;
+	$icon-medium-content-padding: 110px;
+	$icon-large-content-padding: 150px;
+	$icon-huge-content-padding: 180px;
+	$title-margin-bottom: 12px;
+
+	.mkd-iwt-link {
+		margin-top: 5px;
+		display: inline-block;
+		font-size: 14px;
+		text-transform: uppercase;
+		color: #3b3b3b;
+		font-weight: 700;
+		font-family: $headings-font-family;
+		position: relative;
+		@include mkdTransition(all .35s cubic-bezier(0.61, 0.92, 0, 0.21));
+
+		&:hover {
+			opacity: .85;
+			&:after {
+				right: -23px;
+			}
+		}
+	}
+
+	.mkd-iwt-custom-icon {
+		display: inline-block;
+		line-height: 0;
+		margin-bottom: 26px;
+	}
+
+	&.mkd-iwt-icon-top {
+		text-align: center;
+	}
+
+	&.mkd-iwt-icon-left,
+	&.mkd-iwt-icon-left-from-title {
+		text-align: left;
+	}
+
+	&:not(.mkd-iwt-left-from-title) {
+		.mkd-iwt-title-holder {
+			margin-bottom: 10px;
+			text-transform: capitalize;
+
+			h3 {
+				margin-bottom: 16px;
+			}
+		}
+	}
+
+	&.mkd-iwt-icon-left {
+		.mkd-iwt-icon-holder {
+			float: left;
+		}
+
+		&.mkd-iwt-icon-tiny .mkd-iwt-content-holder {
+			padding-left: $icon-tiny-content-padding;
+		}
+
+		&.mkd-iwt-icon-small .mkd-iwt-content-holder {
+			padding-left: $icon-small-content-padding;
+		}
+
+		&.mkd-iwt-icon-medium .mkd-iwt-content-holder {
+			padding-left: $icon-medium-content-padding;
+		}
+
+		&.mkd-iwt-icon-large .mkd-iwt-content-holder {
+			padding-left: $icon-large-content-padding;
+		}
+
+		&.mkd-iwt-icon-huge .mkd-iwt-content-holder {
+			padding-left: $icon-huge-content-padding;
+		}
+	}
+
+
+	&.mkd-iwt-icon-right {
+		text-align: right;
+
+		.mkd-iwt-icon-holder {
+			float: right;
+		}
+
+		&.mkd-iwt-icon-tiny .mkd-iwt-content-holder {
+			padding-right: $icon-tiny-content-padding;
+		}
+
+		&.mkd-iwt-icon-small .mkd-iwt-content-holder {
+			padding-right: $icon-small-content-padding;
+		}
+
+		&.mkd-iwt-icon-medium .mkd-iwt-content-holder {
+			padding-right: $icon-medium-content-padding;
+		}
+
+		&.mkd-iwt-icon-large .mkd-iwt-content-holder {
+			padding-right: $icon-large-content-padding;
+		}
+
+		&.mkd-iwt-icon-huge .mkd-iwt-content-holder {
+			padding-right: $icon-huge-content-padding;
+		}
+	}
+
+	&.mkd-iwt-left-from-title {
+		text-align: left;
+
+		.mkd-iwt-icon-holder,
+		.mkd-iwt-title-holder {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.mkd-iwt-title-holder h3 {
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+
+		&:hover {
+			.mkd-iwt-link {
+				@include mkdTransform(translate3d(0,0,0));
+			}
+		}
+	}
+
+	&:hover {
+		.mkd-iwt-link {
+			@include mkdTransform(translate3d(0,-10px,0));
+		}
+	}
+
+	.mkd-iwt-text-holder p {
+		margin: 8px 0;
+	}
+}

@@ -1,0 +1,70 @@
+.mkd-working-hours-holder {
+	position: relative;
+	padding: 28px 35px 9px 37px;
+	background-color: #fff;
+
+	@include mkdBoxShadow($shadow);
+
+	&.mkd-working-hours-light {
+		color: #fff;
+		background-color: $first-main-color;
+
+		.mkd-wh-title,
+		.mkd-wh-day,
+		.mkd-wh-from {
+			color: #fff;
+		}
+
+	}
+
+	.mkd-wh-title {
+		text-align: left;
+		line-height: 39px;
+	}
+
+	.mkd-wh-item {
+		position: relative;
+		margin-bottom: 16px;
+		padding-bottom: 17px;
+		padding-left: 5px;
+		border-bottom: 1px solid rgba(238, 238, 238, 0.4);
+
+		&:last-child {
+			border-bottom: 0;
+			color: $first-main-color;
+		}
+	}
+
+	.mkd-wh-day {
+		padding-right: 3px;
+		display: table-cell;
+		width: 1%;
+		white-space: nowrap;
+		font-size: 18px;
+	}
+
+	.mkd-wh-hours {
+		padding-left: 4px;
+		display: table-cell;
+		width: 1%;
+		white-space: nowrap;
+		text-align: right;
+		font-size: 18px;
+	}
+
+	.mkd-wh-dots {
+		height: 3px;
+		background-image: radial-gradient(circle closest-side, #b3b3b3 99%, rgba(0, 0, 0, 0) 100%);
+		background-position: 50% 70%;
+		background-size: 6px 2px;
+		background-repeat: repeat-x;
+		display: table-cell;
+		width: 98%;
+		z-index: 1;
+		position: relative;
+	}
+
+	.mkd-wh-text-holder {
+		margin-bottom: 38px;
+	}
+}

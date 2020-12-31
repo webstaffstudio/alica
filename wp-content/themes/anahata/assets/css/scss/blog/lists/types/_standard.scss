@@ -1,0 +1,114 @@
+.mkd-blog-holder {
+	&.mkd-blog-type-standard {
+
+		article {
+			margin-bottom: 61px;
+		}
+
+		.format-quote {
+
+			.mkd-post-content {
+				position: relative;
+				overflow: hidden;
+				padding: 29px 20px 36px 38px;
+
+				.mkd-post-content .mkd-post-text {
+					padding: 11px 37px 29px;
+				}
+
+				.mkd-post-mark {
+					position: absolute;
+					bottom: -30px;
+					right: 0;
+					font-size: 86px;
+					color: #fff;
+				}
+
+				.mkd-post-content-background {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					background-size: cover;
+				}
+
+			}
+
+		}
+
+		.format-link {
+			.mkd-post-content {
+				position: relative;
+				overflow: hidden;
+				background-size: cover;
+				background-color: #7e7e7e;
+
+				.mkd-blog-date-icon {
+					display: none;
+				}
+
+				.mkd-post-info-date {
+					color: #fff;
+					font-size: 18px;
+					font-weight: 400;
+					font-family: $default-font-family;
+				}
+
+				.mkd-post-title {
+
+					@include mkdTransition(opacity 0.25s ease-in-out);
+
+					a:before {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						height: 100%;
+						width: 100%;
+					}
+
+				}
+
+				&:hover {
+					.mkd-post-title {
+						opacity: 0.85;
+					}
+				}
+
+				.mkd-post-text {
+					position: relative;
+					padding: 12px 20px 128px 43px;
+					z-index: 1;
+				}
+
+				.mkd-post-mark {
+					position: absolute;
+					bottom: 30px;
+					right: 41px;
+					font-size: 36px;
+					color: #fff;
+				}
+			}
+
+			.mkd-post-content-background {
+				position: absolute;
+				top: -40%;
+				left: -40%;
+				height: 180%;
+				transform-origin: 50%;
+				width: 180%;
+				@include mkdAnimation(element-rotation 7.5s infinite cubic-bezier(0.46, 0.85, 0.7, 1.1));
+				animation-play-state: paused;
+				background-size: cover;
+
+			}
+
+			&:hover {
+				.mkd-post-content-background {
+					animation-play-state: running;
+				}
+			}
+		}
+	}
+}

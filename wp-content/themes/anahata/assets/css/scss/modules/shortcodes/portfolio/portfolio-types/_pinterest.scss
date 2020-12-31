@@ -1,0 +1,139 @@
+.mkd-portfolio-list-holder-outer.mkd-ptf-pinterest,
+.mkd-portfolio-list-holder-outer.mkd-ptf-masonry {
+	.mkd-portfolio-list-holder {
+		opacity: 0;
+	}
+
+	&.mkd-hover-light {
+		&.mkd-portfolio-gallery-hover article {
+			.mkd-ptf-item-text-overlay {
+				background-color: rgba(#fff, 0.95);
+			}
+
+			.mkd-ptf-item-text-holder h2.mkd-ptf-item-title,
+			.mkd-ptf-item-text-holder .mkd-ptf-category-holder {
+				color: #3b3b3b;
+			}
+		}
+
+	}
+
+	&.mkd-hover-dark {
+		&.mkd-portfolio-gallery-hover article {
+			.mkd-ptf-item-text-overlay {
+				background-color: rgba(12, 12, 12, .68);
+			}
+
+			.mkd-ptf-item-text-holder h2.mkd-ptf-item-title,
+			.mkd-ptf-item-text-holder .mkd-ptf-category-holder {
+				color: #fff;
+			}
+		}
+
+	}
+}
+
+.mkd-portfolio-list-holder-outer.mkd-ptf-pinterest.mkd-portfolio-gallery-hover {
+	$gutter-size: 3%;
+
+	article {
+		margin-bottom: $gutter-size;
+		overflow: hidden;
+		.mkd-ptf-item-text-overlay {
+			background-color: rgba(12, 12, 12, .68);
+		}
+
+		.mkd-ptf-item-title {
+			opacity: 0;
+			-webkit-transition: opacity .2s, -webkit-transform .0s .2s;
+			transition: opacity .2s, transform .0s .2s;
+		}
+
+		.mkd-ptf-category-holder {
+			opacity: 0;
+			-webkit-transition: opacity .2s, -webkit-transform .0s .2s;
+			transition: opacity .2s, transform .0s .2s;
+		}
+
+		.mkd-ptf-item-image-holder img {
+			@include mkdTransition(all .3s cubic-bezier(0.22, 0.61, 0.36, 1));
+			@include mkdTransform(scale(1) translateZ(0));
+		}
+
+		&:hover {
+			.mkd-ptf-item-title,
+			.mkd-ptf-category-holder {
+				opacity: 1;
+				@include mkdTransition(all .35s cubic-bezier(0.22, 0.61, 0.36, 1));
+			}
+			.mkd-ptf-item-image-holder img {
+				@include mkdTransform(scale(1.1) translateZ(0));
+			}
+		}
+	}
+
+	.mkd-portfolio-list-holder .mkd-ptf-item-text-holder {
+		padding: 0;
+	}
+
+
+	.mkd-ptf-item-text-holder {
+		position: absolute;
+		top: 24px;
+		left: 33px;
+		text-align: left;
+
+		h2.mkd-ptf-item-title {
+			color: #fff;
+		}
+
+		.mkd-ptf-category-holder {
+			font-size: 16px;
+			font-weight: 400;
+			color: #fff;
+			text-transform: none;
+			font-family: $default-font-family;
+		}
+	}
+
+	.mkd-portfolio-list-masonry-grid-gutter {
+		width: $gutter-size;
+	}
+
+	&.mkd-ptf-pinterest-three-columns {
+		.mkd-portfolio-list-masonry-grid-sizer,
+		article {
+			width: 31.33%;
+		}
+	}
+
+	&.mkd-ptf-pinterest-four-columns {
+		.mkd-portfolio-list-masonry-grid-sizer,
+		article {
+			width: 23.5%;
+		}
+
+		.mkd-portfolio-list-masonry-grid-gutter {
+			width: 2%;
+		}
+
+		article {
+			margin-bottom: 2%;
+		}
+	}
+
+	&.mkd-ptf-pinterest-five-columns {
+		.mkd-portfolio-list-masonry-grid-sizer,
+		article {
+			width: 18%;
+		}
+
+		.mkd-portfolio-list-masonry-grid-gutter {
+			width: 2.5%;
+		}
+
+		article {
+			margin-bottom: 2.5%;
+		}
+	}
+}

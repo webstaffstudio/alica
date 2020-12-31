@@ -1,0 +1,222 @@
+.mkd-btn {
+	display: inline-block;
+	vertical-align: middle;
+	overflow: visible;
+	position: relative;
+	outline: none;
+	padding: 9px 31px;
+	font-style: normal;
+	font-weight: 700;
+	font-family: $headings-font-family;
+	font-size: 13px;
+	line-height: 1.7em;
+	letter-spacing: 2px;
+	text-align: center;
+	cursor: pointer;
+	border-width: 0;
+
+	@include mkdTransition(color .35s cubic-bezier(0.61, 0.92, 0, 0.21), background-color .35s cubic-bezier(0.61, 0.92, 0, 0.21), border-color .35s cubic-bezier(0.61, 0.92, 0, 0.21), background-position .35s cubic-bezier(0.61, 0.92, 0, 0.21), opacity .35s cubic-bezier(0.61, 0.92, 0, 0.21));
+	@include mkdBoxSizing(border-box);
+
+	.mkd-btn-icon-holder {
+		.mkd-btn-icon-elem {
+			vertical-align: middle;
+		}
+	}
+
+	.mkd-btn-text {
+		display: inline-block;
+	}
+
+	.mkd-btn-icon-holder,
+	.mkd-btn-text {
+		position: relative;
+		z-index: 2;
+	}
+
+	&.mkd-btn-icon .mkd-btn-text {
+		margin-right: 6px;
+	}
+
+	&:not(.mkd-btn-transparent):not(.mkd-btn-outline) {
+		.mkd-btn-overlay {
+			background: inherit;
+			border-width: 2px;
+			border-style: solid;
+			border-color: inherit;
+			position: absolute;
+			top: -2px;
+			left: -2px;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+	}
+
+	/* #Button types styles - start
+	   ========================================================================== */
+	&.mkd-btn-solid {
+		position: relative;
+		background-color: $first-main-color;
+		border: 2px solid $first-main-color;
+		color: #fff;
+	}
+
+	&.mkd-btn-outline {
+		border: 2px solid $first-main-color;
+		color: $first-main-color;
+		background-color: transparent;
+
+		.mkd-btn-overlay {
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+	}
+
+	&.mkd-btn-white {
+		border: 2px solid #fff;
+		background-color: #fff;
+	}
+
+	&.mkd-btn-white-outline {
+		border: 2px solid #fff;
+		background-color: transparent;
+		color: #fff;
+	}
+
+	&.mkd-btn-black {
+		border: 2px solid #303030;
+		color: #fff;
+		background-color: #303030;
+	}
+
+	&.mkd-btn-transparent {
+		min-width: 0 !important;
+		&.mkd-btn-icon {
+			.mkd-btn-icon-holder {
+				left: 0;
+				@include mkdTransition(left .35s cubic-bezier(0.61, 0.92, 0, 0.21));
+			}
+		}
+		&:hover {
+			opacity: .85;
+			.mkd-btn-icon-holder {
+				left: 3px;
+			}
+		}
+	}
+
+	/* #Button types styles - end
+	   ========================================================================== */
+
+	/* #Button hover types styles - start
+    ========================================================================== */
+
+	&.mkd-btn-hover-lighten {
+		&:not(.mkd-btn-custom-hover-color):hover {
+			//important because of inline color attribute. :not is used so we don't have to use important in JS
+			color: #fff !important;
+		}
+
+		&:not(.mkd-btn-custom-hover-bg):hover {
+			//important because of inline color attribute. :not is used so we don't have to use important in JS
+			background-color: lighten($first-main-color, 10%) !important;
+		}
+
+		&:not(.mkd-btn-custom-border-hover):hover {
+			//important because of inline color attribute. :not is used so we don't have to use important in JS
+			border-color: lighten($first-main-color, 10%) !important;
+		}
+	}
+
+	&.mkd-btn-hover-darken {
+		&:not(.mkd-btn-custom-hover-color):hover {
+			//important because of inline color attribute. :not is used so we don't have to use important in JS
+			color: #fff !important;
+		}
+
+		&:not(.mkd-btn-custom-hover-bg):hover {
+			//important because of inline color attribute. :not is used so we don't have to use important in JS
+			background-color: darken($first-main-color, 10%) !important;
+		}
+
+		&:not(.mkd-btn-custom-border-hover):hover {
+			//important because of inline color attribute. :not is used so we don't have to use important in JS
+			border-color: darken($first-main-color, 10%) !important;
+		}
+	}
+
+	/* #Button hover types styles - end
+	========================================================================== */
+
+	/* #Button sizes styles - start
+	   ========================================================================== */
+	&.mkd-btn-small {
+		font-size: 12px;
+		padding: 7px 27px;
+		min-width: 95px;
+		font-weight: 700;
+
+		&.mkd-btn-icon .mkd-btn-text {
+			margin-right: 0;
+		}
+	}
+
+	&.mkd-btn-medium {
+		//same as default
+		min-width: 145px;
+	}
+
+	&.mkd-btn-large {
+		font-size: 16px;
+		padding: 14px 45px;
+		min-width: 165px;
+	}
+
+	&.mkd-btn-huge {
+		min-width: 190px;
+	}
+
+	&.mkd-btn-huge,
+	&.mkd-btn-huge-full-width {
+		font-size: 18px;
+		padding: 18px 60px;
+	}
+
+	&.mkd-btn-huge-full-width {
+		display: block;
+		text-align: center;
+	}
+	/* #Button sizes styles - end
+	   ========================================================================== */
+}
+
+.woocommerce .button,
+.post-password-form input[type='submit'],
+input.wpcf7-form-control.wpcf7-submit {
+	@extend .mkd-btn;
+	@extend .mkd-btn-solid;
+	@extend .mkd-btn-medium;
+
+	&:hover {
+		background-color: lighten($first-main-color, 10%) !important;
+		border: 2px solid lighten($first-main-color, 10%) !important;
+	}
+}
+
+.tribe-events-button {
+	@extend .mkd-btn;
+	@extend .mkd-btn-solid;
+	@extend .mkd-btn-medium;
+	@extend .mkd-btn-hover-outline;
+}
+
+.tribe-events-read-more {
+	@extend .mkd-btn;
+	@extend .mkd-btn-solid;
+	@extend .mkd-btn-small;
+	@extend .mkd-btn-hover-outline;
+}
+

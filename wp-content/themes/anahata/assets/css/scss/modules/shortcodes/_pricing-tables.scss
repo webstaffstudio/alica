@@ -1,0 +1,163 @@
+/* ==========================================================================
+# Pricing table style - begin
+========================================================================== */
+
+.mkd-pricing-tables.mkd-two-columns .mkd-price-table {
+	width: 50%;
+}
+
+.mkd-pricing-tables.mkd-three-columns .mkd-price-table {
+	width: 33.33%;
+}
+
+.mkd-pricing-tables.mkd-four-columns .mkd-price-table {
+	width: 25%;
+}
+
+.mkd-price-table {
+	position: relative;
+	width: 100%;
+	padding: 0;
+	padding: 0 15px;
+	float: left;
+
+	@include mkdBoxSizing(border-box);
+
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+.mkd-price-table .mkd-price-table-inner {
+	background-color: #fff;
+	text-align: center;
+	padding: 36px 0 27px 0;
+	border: 1px solid #f2f2f2;
+	position: relative;
+
+	@include mkdBoxSizing(border-box);
+
+	ul {
+		position: relative;
+		z-index: 10;
+		list-style-type: none;
+		padding: 0;
+	}
+
+	.mkd-price {
+		margin: 0 0 16px 0;
+		font-size: 50px;
+		font-weight: 600;
+		font-family: $default-font-family;
+	}
+
+	.mkd-title-content {
+		margin-bottom: 2px;
+	}
+
+	.mkd-table-prices {
+		border-bottom: 1px solid #ebebeb;
+	}
+
+	.mkd-table-title {
+		margin-bottom: 20px;
+	}
+
+	.mkd-price-in-table {
+		margin-bottom: 3px;
+	}
+
+	.mkd-pt-price-period {
+		font-size: 12px;
+		color: #ababab;
+		font-family: $default-font-family;
+		font-weight: 400;
+		margin-bottom: 33px;
+	}
+
+	span.mkd-btn-text {
+		font-size: 13px;
+	}
+
+	.mkd-table-content {
+		margin-top: 30px;
+		font-size: 15px;
+		font-weight: 400;
+		color: #a4a2a2;
+		line-height: 28px;
+		padding: 0 20px;
+	}
+
+	.mkd-price-button {
+		margin-top: 29px;
+
+		a.mkd-btn.mkd-btn-small {
+			padding: 12px 36px;
+		}
+	}
+
+	.mkd-pt-label-holder {
+		position: absolute;
+		top: -19px;
+		right: 49px;
+		z-index: 20;
+
+		.mkd-pt-label-inner {
+			background-color: #eee;
+			padding: 3px 20px 3px 25px;
+			color: #fff;
+			font-family: $headings-font-family;
+			color: $first-main-color;
+			font-size: 14px;
+			font-weight: 600;
+			text-transform: uppercase;
+			color: $first-main-color;
+
+			@include mkdTransform(rotate(-90deg) perspective(1px));
+			@include mkdTransformOrigin(right);
+			@include mkdBoxSizing(border-box);
+		}
+	}
+
+	.mkd-pt-label-content {
+		@include mkdTransform(rotate(180deg) translateZ(0));
+		@include mkdTransformOrigin(center);
+	}
+}
+
+.mkd-price-table.mkd-pt-active {
+	.mkd-price-table-inner {
+		background-color: $first-main-color;
+		overflow: hidden;
+
+		color: #fff;
+
+		.mkd-title-content,
+		.mkd-pt-price-period,
+		.mkd-table-content,
+		.mkd-price {
+			color: inherit;
+		}
+
+		.mkd-pt-label-holder {
+			top: -19px;
+		}
+
+		.mkd-pt-label-inner {
+			background-color: #fff;
+		}
+
+		.mkd-btn.mkd-btn-small {
+			color: #787777;
+		}
+
+		.mkd-table-prices {
+			border-bottom: 1px solid #fff;
+		}
+
+	}
+}
+
+/* ==========================================================================
+# Pricing table style - end
+========================================================================== */
