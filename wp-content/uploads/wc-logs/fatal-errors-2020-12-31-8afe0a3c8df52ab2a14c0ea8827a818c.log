@@ -1,0 +1,20 @@
+2020-12-31T12:20:09+00:00 CRITICAL syntax error, unexpected '<' в C:\OSPanel\domains\alica\wp-content\themes\anahata-child\functions.php на строке 115
+
+2020-12-31T12:20:24+00:00 CRITICAL syntax error, unexpected '<' в C:\OSPanel\domains\alica\wp-content\themes\anahata-child\functions.php на строке 115
+
+2020-12-31T12:23:42+00:00 CRITICAL syntax error, unexpected 'class' (T_CLASS), expecting ',' or ';' в C:\OSPanel\domains\alica\wp-content\themes\anahata-child\functions.php на строке 115
+
+2020-12-31T12:23:57+00:00 CRITICAL syntax error, unexpected 'class' (T_CLASS), expecting ',' or ';' в C:\OSPanel\domains\alica\wp-content\themes\anahata-child\functions.php на строке 115
+
+2020-12-31T12:24:22+00:00 CRITICAL syntax error, unexpected 'class' (T_CLASS), expecting ',' or ';' в C:\OSPanel\domains\alica\wp-content\themes\anahata-child\functions.php на строке 116
+
+2020-12-31T12:24:37+00:00 CRITICAL syntax error, unexpected 'class' (T_CLASS), expecting ',' or ';' в C:\OSPanel\domains\alica\wp-content\themes\anahata-child\functions.php на строке 116
+
+2020-12-31T12:56:05+00:00 CRITICAL syntax error, unexpected ')' в C:\OSPanel\domains\alica\wp-content\themes\anahata-child\functions.php на строке 119
+
+2020-12-31T12:56:09+00:00 CRITICAL syntax error, unexpected ')' в C:\OSPanel\domains\alica\wp-content\themes\anahata-child\functions.php на строке 119
+
+2020-12-31T12:56:20+00:00 CRITICAL syntax error, unexpected ')' в C:\OSPanel\domains\alica\wp-content\themes\anahata-child\functions.php на строке 119
+
+2020-12-31T12:56:24+00:00 CRITICAL syntax error, unexpected ')' в C:\OSPanel\domains\alica\wp-content\themes\anahata-child\functions.php на строке 119
+

@@ -108,9 +108,26 @@ function get_course_content()
 {
     $courses = get_field('courses_content');
     if ($courses): ?>
-        <?php foreach ($courses as $cours): ?>
+        <section class="days">
+            <?php $i = 1;
+            foreach ($courses as $cours): ?>
+                <h4 <?= ($i == 1) ? 'class="active"' : ''; ?>><?= $cours['day']; ?></h4>
+                <div class="day-content">
+                    <?php if ($cours['media_file'] && $cours['media_file_type'] === 'file') : ?>
 
-        <?php endforeach; ?>
+                        <video class="" loop="loop" muted data-object-fit="cover">
+                            <source src="<?= $cours['media_file']['link']; ?>" type="video/mp4" loop>
+                        </video>
+
+                    <?php elseif ($cours['youtube_vimeo'] && $cours['media_file_type'] === 'social_type') : ?>
+                        <div class="social-media-file">
+                            <?= $cours['youtube_vimeo']; ?>
+                        </div>
+                    <?php endif; ?>
+                    <?= ($cours['course_content']) ? '<div class="text-content">' . $cours['course_content'] . '</div>' : ''; ?>
+                </div>
+                <?php $i++; endforeach; ?>
+        </section>
     <?php endif; ?>
 
     <?php
